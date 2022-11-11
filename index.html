@@ -6,7 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+img{ width:100%; }
+*{box-sizing: border-box;}
+.con{ 
+    width:1000px; 
+    margin: 0 auto; 
+    border: 1px solid; 
+    padding: 1rem;
+    background-color:blanchedalmond;
+}
+.all-img{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap:1rem;
+}
+.text{
+    text-align: center;
+    border: 1px solid;
+    padding: 3px;
+}
+</style>
 <body>
-    
+    <div class="con">
+        <div class="all-img">
+            <img style="height: 150px;" src="./down1load.jpg" alt="">
+            <img src="./download.jpg" alt="">
+            <img src="./imag2es.jpg" alt="">
+            <img src="./image5s.jpg" alt="">
+        </div>
+        <div class="show">
+            <img src="./images.jpg" alt="">
+        </div>
+        <!-- creating input field -->
+        <div class="text">
+            <h1>Click here for create HTML content !</h1>
+        </div>
+        <!-- > -->
+    </div>
 </body>
+<script src="./JS.js"></script>
 </html>
