@@ -1,5 +1,8 @@
 addEventListener('click', fn);
 
+setTimeout(() => {
+    removeEventListener('click', fn)
+},5000)
 let oldtar;
 function fn(ev) {
     let tar = ev.target.closest('.all-img img');
@@ -17,14 +20,28 @@ function fn(ev) {
 let text = document.querySelector('.text')
 text.onclick = function(e){
     let olcham = text.getBoundingClientRect()
+    let textA;
     console.log(olcham);
     text.replaceWith(( function(){
-        let textA = document.createElement('textarea')
+        textA = document.createElement('textarea')
         textA.value = text.innerHTML;
         textA.style.width = olcham.width +'px'
         textA.style.height = olcham.height +'px'
         return textA;
     })())
+    let div;
+    textA.onkeydown = function(e){
+        if(e.ctrlKey && e.key == 'Enter'){
+            textA.replaceWith(( function(){
+                div = document.createElement('div')
+                div.innerHTML = textA.value;
+                div.style.textAlign = 'center'
+                div.style.border = '2px solid red'
+                return div;
+            })())   
+        }
+    }
+
 }
 // console.log(
 //     
