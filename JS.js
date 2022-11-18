@@ -43,9 +43,18 @@ text.onclick = function(e){
     }
 
 }
-// console.log(
-//     
-// );
+let test = document.querySelector('.el-test');
+let div = test.querySelector('div')
+let span = test.querySelector('span')
+let a = test.querySelector('a')
+let textA = test.querySelector('textarea')
+let input = test.querySelector('input')
+console.log(
+    div, span , a, textA,input
+);
+function getElementType(text){
+    let el = document.createElement
+}
 
 // el.setAttribute(attr, val)   --- el ga attribute ornatish
 // el.getAttribute(attr)    --- 
