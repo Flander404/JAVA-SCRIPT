@@ -59,18 +59,39 @@
 
 // yangi event hosil qilish
 
-let inp = document.querySelector("#inp")
+// let inp = document.querySelector("#inp")
 
-inp.addEventListener('keydown', function(e){
-    if(!e.target.value) return;
-    if(e.target.value === 'photoprokat24' && e.key == 'Enter'){
-        let yangiE = new Event('yangi-event');
-        inp.dispatchEvent(yangiE)
+// inp.addEventListener('onkeydown', function(e){
+//     if(!e.target.value) return;
+//     if(e.target.value === 'photoprokat24' && e.key == 'Enter'){
+//         let yangiE = new Event('yangi-event');
+//         inp.dispatchEvent(yangiE)
+//     }
+// })
+// inp.addEventListener('yangi-event', function(e){
+//     console.log('Rahmat');
+// })
+
+//inputagi selectorlari rangini ozgartirish
+
+main.onkeyup = function (e) {
+    document.querySelectorAll('*').forEach(function (e) {
+        e.style.backgroundColor = '';
+    })
+
+    let value = e.target.value;
+    if (!value) return;
+    if (e.key == 'Enter') {
+        try {
+            document.querySelectorAll(value).forEach(function (e) {
+                e.style.backgroundColor = 'rgba(193,159,109,0.704)';
+            })
+        } catch (e) {
+            console.log(e.message);
+        }
+
     }
-})
-inp.addEventListener('yangi-event', function(e){
-    console.log('Rahmat');
-})
+}
 // el.setAttribute(attr, val)   --- el ga attribute ornatish
 // el.getAttribute(attr)    --- 
 // el.hasAttribute(attr)
